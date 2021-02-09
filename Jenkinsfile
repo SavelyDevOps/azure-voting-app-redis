@@ -7,6 +7,11 @@ pipeline {
             echo "$GIT_BRANCH"
          }
       }
+      stage('Verify User') {
+         steps {
+            sh 'echo ${USER}'
+         }
+      }
       stage('Docker Build') {
          steps {
             sh 'docker images -a'
